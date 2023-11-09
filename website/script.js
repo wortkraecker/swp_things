@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const maxVerstappenElement = document.querySelector(".max-verstappen");
 
