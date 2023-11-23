@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         maxVerstappenElement.style.color = "blue";
     });
 
+    
     maxVerstappenElement.addEventListener("mouseout", function () {
         maxVerstappenElement.style.color = "";
     });
