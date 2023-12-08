@@ -1,187 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Max GOAT</title>
   <style>
-    
     body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: none;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center center;
+      transition: background-image 4s ease-in-out
+    }
 
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
 
-label {
-  display: block;
-  margin: 20px 0 10px;
-  font-size: 18px;
-  color: #333;
-}
-
-
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-#resultContainer {
-  margin-top: 20px;
-}
-
-#myModal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #ccc;
+    .stats-header {
+  background-color: #fff; 
   padding: 20px;
-  background-color: #fff;
-  z-index: 1;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #333;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#modalContent {
+  margin: 20px auto; 
+  border: 1px solid #dfe1e5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 600px; 
   text-align: center;
 }
 
-img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+.stats-header h1 {
+  color: #000; 
+  margin: 0; 
 }
 
-h2 {
-  color: #333;
+button img {
+  width: 20px; 
+  height: 20px; 
 }
 
-p {
-  margin: 10px 0;
-  color: #555;
-}
+    button:hover {
+      background-color: #45a049;
+    }
 
-strong {
-  color: #333;
-}
+    #resultContainer {
+      margin-top: 20px;
+    }
 
-#searchContainer {
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  border: 1px solid #dfe1e5;
-  border-radius: 24px;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1);
-  margin: 20px auto;
-  max-width: 400px;
-}
+    #myModal, #loginModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid #ccc;
+      padding: 20px;
+      background-color: #fff;
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
 
-#searchWrapper {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 0 16px;
-}
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-#searchInput {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  outline: none;
-}
+    .close:hover,
+    .close:focus {
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-#searchIcon {
-  cursor: pointer;
-  border: none;
-  background: none;
-  vertical-align: middle; /* Adjust the vertical alignment */
-}
+    #modalContent, #loginContent {
+      text-align: center;
+    }
 
-#searchIcon img {
-  width: 20px;
-  height: 20px;
-}
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
 
-#searchIcon:hover {
-  opacity: 0.7; /* Add a subtle hover effect */
-}
+    h2 {
+      color: #333;
+    }
 
-/* Add this style to your existing styles or in a new style block */
-#slideshowContainer {
-  position: relative;
-  overflow: hidden;
-  margin-top: 20px; /* Adjust the margin as needed */
-}
+    p {
+      margin: 10px 0;
+      color: #555;
+    }
 
-.slide {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border: 1px solid #dfe1e5;
-  border-radius: 8px;
-  text-align: center;
-  animation: slideAnimation 10s linear infinite; /* Adjust the animation duration as needed */
-}
+    strong {
+      color: #333;
+    }
 
-@keyframes slideAnimation {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
-}
+    #searchContainer {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1);
+      margin: 20px auto;
+      max-width: 400px;
+    }
 
+    #searchWrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0 16px;
+    }
 
+    #searchInput {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
 
+    #searchIcon {
+      cursor: pointer;
+      border: none;
+      background: none;
+      vertical-align: middle;
+    }
 
+    #searchIcon img {
+      width: 20px;
+      height: 20px;
+    }
 
-    
+    #searchIcon:hover {
+      opacity: 0.7;
+    }
   </style>
 </head>
 <body>
+  <button id="loginButton"><img src alt="Login"></button>
+  <div id="keyStatus"></div>
 
-  <h1>F1 Driver Stats</h1>
-
-
+  <div class="stats-header">
+    <h1>F1 Driver Stats</h1>
+  </div>
   
   <div id="resultContainer"></div>
 
@@ -194,44 +168,69 @@ strong {
     </div>
   </div>
   
-  <div id="slideshowContainer">
-    <div class="slide">Info 1</div>
-    <div class="slide">Info 2</div>
-    <div class="slide">Info 3</div>
-  </div>
-  
-  
   <div id="myModal">
     <span class="close" onclick="closeModal()">&times;</span>
     <div id="modalContent"></div>
   </div>
 
-  <script>
-    function makeApiRequest() {
-      var searchQuery = document.getElementById('searchInput').value;
+  <div id="loginModal">
+    <span class="close" onclick="closeLoginModal()">&times;</span>
+    <div id="loginContent">
+      <h2>Enter Your API Key</h2>
+      <input type="text" id="apiKeyInput" placeholder="API Key">
+      <button id="saveApiKeyButton">Save</button>
+    </div>
+  </div>
 
-      var requestOptions = {
+  <script>
+    var apiKey;
+
+    function makeApiRequest() {
+    
+    if (!apiKey || apiKey.trim() === '') {
+        displayError('API Key is not set. Please click on Login and enter your API key.');
+        return; 
+    }
+
+    var searchQuery = document.getElementById('searchInput').value;
+    var requestOptions = {
         method: 'GET',
         headers: {
-          "x-rapidapi-host": "api-formula-1.p.rapidapi.com",
-          "x-rapidapi-key": "a07e20d351msh9213cddad41101ap1c3ec4jsn2415ce669c7c"
+            "x-rapidapi-host": "api-formula-1.p.rapidapi.com",
+            "x-rapidapi-key": apiKey
         }
-      };
+    };
+    var apiUrl = `https://api-formula-1.p.rapidapi.com/drivers?search=${searchQuery}`;
 
-      var apiUrl = `https://api-formula-1.p.rapidapi.com/drivers?search=${searchQuery}`;
+    fetch(apiUrl, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(result => {
+            if (result.response && result.response.length > 0) {
+                displayDriverInfo(result.response[0]);
+            } else {
+                throw new Error('No API key loaded, please click on Login to enter your API key');
+            }
+        })
+        .catch(error => {
+            console.log('Error:', error);
+            displayError(error.message);
+        });
+}
 
-      fetch(apiUrl, requestOptions)
-        .then(response => response.json())
-        .then(result => displayDriverInfo(result.response[0]))
-        .catch(error => console.log('error', error));
-    }
+function displayError(errorMessage) {
+    var modalContent = document.getElementById('modalContent');
+    modalContent.innerHTML = `<p style="color: red;">Error: ${errorMessage}</p>`;
+    document.getElementById('myModal').style.display = 'block';
+}
 
     function displayDriverInfo(driver) {
       var modalContent = document.getElementById('modalContent');
-      modalContent.innerHTML = '';
-
-      
-      var driverInfoString = `
+      modalContent.innerHTML = `
         <img src="${driver.image}" alt="${driver.name}">
         <h2>${driver.name}</h2>
         <p><strong>Country:</strong> ${driver.country.name}</p>
@@ -244,46 +243,96 @@ strong {
         <p><strong>Wins:</strong> ${driver.highest_race_finish.number}</p>
         <p><strong>Career Points:</strong> ${driver.career_points}</p>
       `;
-
-      modalContent.innerHTML = driverInfoString;
-
-      
       document.getElementById('myModal').style.display = 'block';
     }
 
-    document.getElementById('searchInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      makeApiRequest();
-    }
-  });
-
     function closeModal() {
-      
       document.getElementById('myModal').style.display = 'none';
     }
 
-    // Add this script to your existing script tag or create a new one
-var currentIndex = 0;
-var slides = document.getElementsByClassName("slide");
+    function showLoginModal() {
+      document.getElementById('loginModal').style.display = 'block';
+    }
 
-function showSlide(index) {
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    function closeLoginModal() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+
+    function saveApiKey() {
+      apiKey = document.getElementById('apiKeyInput').value;
+      sessionStorage.setItem('apiKey', apiKey);
+      checkLoginStatus();
+      closeLoginModal();
+    }
+
+    function checkLoginStatus() {
+    apiKey = sessionStorage.getItem('apiKey');
+    var keyStatusElement = document.getElementById('keyStatus');
+    var loginButton = document.getElementById('loginButton');
+
+    if (apiKey) {
+        keyStatusElement.innerHTML = '.';
+        keyStatusElement.style.color = 'green'; 
+        loginButton.innerHTML = 'Logout';
+        loginButton.style.backgroundColor = 'red'; 
+        loginButton.removeEventListener('click', showLoginModal);
+        loginButton.addEventListener('click', handleLogout);
+    } else {
+        keyStatusElement.innerHTML = 'No API Key detected';
+        keyStatusElement.style.color = 'red';
+        loginButton.innerHTML = 'Login';
+        loginButton.style.backgroundColor = '#4CAF50'; 
+        loginButton.removeEventListener('click', handleLogout);
+        loginButton.addEventListener('click', showLoginModal);
+    }
+}
+
+function handleLogout() {
+    sessionStorage.removeItem('apiKey');
+    checkLoginStatus(); 
+    var loginButton = document.getElementById('loginButton');
+    loginButton.innerHTML = 'Login';
+    loginButton.removeEventListener('click', handleLogout);
+    loginButton.addEventListener('click', clearSessionStorage);
+}
+
+function clearSessionStorage() {
+    sessionStorage.clear();
+    checkLoginStatus();
+}
+
+window.addEventListener('load', checkLoginStatus);
+
+    document.getElementById('searchInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        makeApiRequest();
+      }
+    });
+
+    document.getElementById('loginButton').addEventListener('click', showLoginModal);
+    document.getElementById('saveApiKeyButton').addEventListener('click', saveApiKey);
+    window.addEventListener('load', checkLoginStatus);
+
+    const backgroundImages = [
+    'image5.jpg',
+    'image4.jpg',
+    'image6.jpg',
+  ];
+  let currentImageIndex = 0;
+
+  function changeBackgroundImage() {
+    document.body.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+    currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
   }
 
-  slides[index].style.display = "block";
-}
+  changeBackgroundImage();
+  setInterval(changeBackgroundImage, 15000);
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}
-
-// Show the first slide initially
-showSlide(currentIndex);
-
-
-setInterval(nextSlide, 30000); // Change 3000 to the desired interval in milliseconds
+  const backgroundImage = ['image6.jpg', 'image4.jpg', 'image5.jpg'];
+backgroundImages.forEach(imgSrc => {
+  const img = new Image();
+  img.src = imgSrc;
+});
 
   </script>
 
