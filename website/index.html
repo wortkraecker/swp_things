@@ -213,7 +213,7 @@ button img {
             if (result.response && result.response.length > 0) {
                 displayDriverInfo(result.response[0]);
             } else {
-                throw new Error('No API key loaded, please click on Login to enter your API key');
+                throw new Error('No API key loaded, invalid API key or wrong input');
             }
         })
         .catch(error => {
