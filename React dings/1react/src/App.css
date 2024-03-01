@@ -1,0 +1,55 @@
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: left;
+}
+
+.logo {
+  width: 5em; 
+  margin: 2em; 
+  opacity: 0.9;
+  transition: opacity 500ms, transform 300ms;
+}
+.logo:hover {
+  opacity: 1; 
+  transform: scale(1.1); 
+}
+.logo.react:hover {
+  transform: scale(1.1) rotate(-10deg); 
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo:not(.react):hover {
+    animation: pulse 2s infinite ease-in-out; 
+  }
+}
+
+.card {
+  margin: 1em auto; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+  transition: box-shadow 300ms; 
+}
+.card:hover {
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2); 
+}
+
+.read-the-docs {
+  font-size: 0.9em; 
+  color: #666; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+}

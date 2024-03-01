@@ -1,0 +1,21 @@
+button {
+    display: inline-block;
+    padding: 12px 22px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #ff00d9;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #ff00d9;
+  }
+
+  button:hover {
+    background-color: #ff00d9;
+  }
+  
+  button:active {
+    background-color: #ff00d9;
+  }
+  

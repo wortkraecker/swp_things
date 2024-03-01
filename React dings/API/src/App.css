@@ -1,0 +1,70 @@
+.card-header {
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-body {
+    text-align: center; 
+}
+
+.form-group {
+    display: inline-block; 
+    margin-right: 10px; 
+}
+
+#search {
+    width: 200px;
+}
+
+.btn {
+    vertical-align: middle; 
+}
+
+.table {
+    margin: 0 auto; 
+    width: 50%; 
+    text-align: center;
+}
+
+.table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.table td {
+    padding: 8px; 
+    border: 1px solid #ddd;
+}
+
+.table thead {
+    background-color: #f2f2f2; 
+    font-weight: bold; 
+}
+
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movieItem {
+    margin: 10px;
+    text-align: center;
+}
+
+.movieItem img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.movieItem .title {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.movieItem .year {
+    color: #888;
+    margin-top: 5px;
+}
